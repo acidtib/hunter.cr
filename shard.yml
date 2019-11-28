@@ -1,0 +1,9 @@
+name: hunter
+version: 0.1.0
+
+authors:
+  - Dainel Vera <arubinofaux@gmail.com>
+
+crystal: 0.31.1
+
+license: MIT
