@@ -26,5 +26,9 @@ module Hunter
     def leadslists
       Api::LeadsLists.new(@httpClient, @apiKey)
     end
+
+    def status
+      Api::Status.new.ping
+    end
   end
 end
