@@ -49,5 +49,43 @@ module Hunter
         end)
       end
     end
+
+    def self.handleStatus(response : HTTP::Client::Response) : JSON::Any
+      case response.status_code
+      when 200
+        body = JSON.parse(response.body)["data"]
+        
+        JSON.parse(JSON.build do |json|
+          json.object do
+            json.field("hostname", body["hostname"])
+            json.field "services" do
+              json.array do
+                body["services"].as_a.each do |s|
+                  json.object do
+                    json.field("alias", s["alias"])
+                    json.field("uptime", s["uptime"])
+                    json.field("isDown", s["isDown"])
+                  end
+                end
+              end
+            end
+          end
+        end)
+      else
+        JSON.parse(JSON.build do |json|
+          json.object do
+            json.field "errors" do
+              json.array do
+                json.object do
+                  json.field("id", "total_meltdown")
+                  json.field("code", 9000)
+                  json.field("details", "Something bad happened")
+                end
+              end
+            end
+          end
+        end)
+      end
+    end
   end
 end
