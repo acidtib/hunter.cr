@@ -19,26 +19,34 @@ module Hunter
     # 429 - Too many requests / You have reached your usage limit. Upgrade your plan if necessary
     # 451 - Unavailable for legal reasons / The person behind the requested resource has asked us directly or indirectly to stop the processing of this resource. For this reason, you shouldn't process this resource yourself in any way
     # 5XX - Server errors / Something went wrong on Hunter's end
-    def handleResponse(response : HTTP::Client::Response)
+    def handleResponse(response : HTTP::Client::Response) : JSON::Any
       case response.status_code
       when 200, 201, 202, 222
         JSON.parse(response.body)
       when 204
-        {"ok"}
+        JSON.parse(JSON.build do |json|
+          json.object do
+
+          end
+        end)
       when 400, 401, 403, 404, 422, 429, 451
         JSON.parse(response.body)
       when 500
         JSON.parse(response.body)
       else
-        {
-          "errors": [
-            {
-              "id": "total_meltdown",
-              "code": 9000,
-              "details": "Something bad happened"
-            }
-          ]
-        }
+        JSON.parse(JSON.build do |json|
+          json.object do
+            json.field "errors" do
+              json.array do
+                json.object do
+                  json.field("id", "total_meltdown")
+                  json.field("code", 9000)
+                  json.field("details", "Something bad happened")
+                end
+              end
+            end
+          end
+        end)
       end
     end
   end
