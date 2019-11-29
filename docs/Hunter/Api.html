@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.30.1">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/arubinofaux/hunter.cr">
+  <title>Hunter::Api - github.com/arubinofaux/hunter.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/arubinofaux/hunter.cr/Hunter" data-name="hunter">
+      <a href="../Hunter.html">Hunter</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/arubinofaux/hunter.cr/Hunter/Api" data-name="hunter::api">
+      <a href="../Hunter/Api.html">Api</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Api/Account" data-name="hunter::api::account">
+      <a href="../Hunter/Api/Account.html">Account</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Api/Domain" data-name="hunter::api::domain">
+      <a href="../Hunter/Api/Domain.html">Domain</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Api/Email" data-name="hunter::api::email">
+      <a href="../Hunter/Api/Email.html">Email</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Api/Leads" data-name="hunter::api::leads">
+      <a href="../Hunter/Api/Leads.html">Leads</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Api/LeadsLists" data-name="hunter::api::leadslists">
+      <a href="../Hunter/Api/LeadsLists.html">LeadsLists</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Api/Status" data-name="hunter::api::status">
+      <a href="../Hunter/Api/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arubinofaux/hunter.cr/Hunter/Client" data-name="hunter::client">
+      <a href="../Hunter/Client.html">Client</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Hunter::Api
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hunter/Api.html">Hunter::Api</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct Known Subclasses</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../Hunter/Api/Account.html">Hunter::Api::Account</a></li>
+  
+    <li class="other-type"><a href="../Hunter/Api/Domain.html">Hunter::Api::Domain</a></li>
+  
+    <li class="other-type"><a href="../Hunter/Api/Email.html">Hunter::Api::Email</a></li>
+  
+    <li class="other-type"><a href="../Hunter/Api/Leads.html">Hunter::Api::Leads</a></li>
+  
+    <li class="other-type"><a href="../Hunter/Api/LeadsLists.html">Hunter::Api::LeadsLists</a></li>
+  
+  </ul>
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/arubinofaux/hunter.cr/blob/d41dc35b1a21a65c200332f4f9cc9b96242d5eae/src/hunter/api.cr#L2" target="_blank">
+        hunter/api.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="APIVersion">
+        <strong>APIVersion</strong> = <code><span class="s">&quot;v2&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Headers">
+        <strong>Headers</strong> = <code><span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span> {<span class="s">&quot;Content-Type&quot;</span> => <span class="s">&quot;application/json&quot;</span>, <span class="s">&quot;Accept&quot;</span> => <span class="s">&quot;application/json&quot;</span>, <span class="s">&quot;User-Agent&quot;</span> => <span class="s">&quot;hunter.cr&quot;</span>}</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(httpClient:HTTP::Client,apiKey:String)-class-method" class="signature"><strong>.new</strong>(httpClient : HTTP::Client, apiKey : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#handleStatus(response:HTTP::Client::Response):JSON::Any-class-method" class="signature"><strong>.handleStatus</strong>(response : HTTP::Client::Response) : JSON::Any</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#handleResponse(response:HTTP::Client::Response):JSON::Any-instance-method" class="signature"><strong>#handleResponse</strong>(response : HTTP::Client::Response) : JSON::Any</a>
+        
+          <div class="summary"><p>200 - OK / The request was successful  201 - Created / The request was successful and the resource was created  202 - Email verification in progress / The Email verification is still in progress.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(httpClient:HTTP::Client,apiKey:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(httpClient : HTTP::Client, apiKey : String)
+
+        <a class="method-permalink" href="#new(httpClient:HTTP::Client,apiKey:String)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arubinofaux/hunter.cr/blob/d41dc35b1a21a65c200332f4f9cc9b96242d5eae/src/hunter/api.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="handleStatus(response:HTTP::Client::Response):JSON::Any-class-method">
+      <div class="signature">
+        
+        def self.<strong>handleStatus</strong>(response : HTTP::Client::Response) : JSON::Any
+
+        <a class="method-permalink" href="#handleStatus(response:HTTP::Client::Response):JSON::Any-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arubinofaux/hunter.cr/blob/d41dc35b1a21a65c200332f4f9cc9b96242d5eae/src/hunter/api.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="handleResponse(response:HTTP::Client::Response):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>handleResponse</strong>(response : HTTP::Client::Response) : JSON::Any
+
+        <a class="method-permalink" href="#handleResponse(response:HTTP::Client::Response):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>200 - OK / The request was successful</p>
+
+<p>201 - Created / The request was successful and the resource was created</p>
+
+<p>202 - Email verification in progress / The Email verification is still in progress. Feel free to make the same verification again as often as you want, it will only count as a single request until we return the response</p>
+
+<p>204 - No content / The request was successful and no additional content was sent</p>
+
+<p>222 - Email verification failed / The Email verification failed because of an unexpected response from the remote SMTP server. This failure is outside of our control. We advise you to retry later</p>
+
+<p>400 - Bad request / Your request was not valid</p>
+
+<p>401 - Unauthorized / No valid API key was provided</p>
+
+<p>403 - Forbidden / You have reached the rate limit</p>
+
+<p>404 - Not found / The requested resource does not exist</p>
+
+<p>422 - Unprocessable entity / Your request is valid but the creation of the resource failed. Check the errors</p>
+
+<p>429 - Too many requests / You have reached your usage limit. Upgrade your plan if necessary</p>
+
+<p>451 - Unavailable for legal reasons / The person behind the requested resource has asked us directly or indirectly to stop the processing of this resource. For this reason, you shouldn't process this resource yourself in any way</p>
+
+<p>5XX - Server errors / Something went wrong on Hunter's end</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arubinofaux/hunter.cr/blob/d41dc35b1a21a65c200332f4f9cc9b96242d5eae/src/hunter/api.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
