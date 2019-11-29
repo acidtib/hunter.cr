@@ -1,16 +1,19 @@
 # hunter.cr
 
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://arubinofaux.github.io/hunter.cr/index.html)
+[![License](https://img.shields.io/github/license/arubinofaux/hunter.cr)](https://github.com/arubinofaux/hunter.cr/blob/master/LICENSE)
+
 A Crystal-Lang wrapper for [Hunter.io](https://hunter.io) API V2
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+1. Add this to your application's `shard.yml`:
 
-   ```yaml
-   dependencies:
-     hunter:
-       github: arubinofaux/hunter.cr
-   ```
+```yaml
+dependencies:
+  hunter:
+    github: arubinofaux/hunter.cr
+```
 
 2. Run `shards install`
 
