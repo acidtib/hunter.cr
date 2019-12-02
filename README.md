@@ -57,6 +57,12 @@ client.email.count(domain: "intercom.io")
 client.account
 ```
 
+#### Service Status
+
+```crystal
+client.status
+```
+
 ## Development
 
 For development you will need API Credentials from [Hunter.io](https://hunter.io/api_keys)
