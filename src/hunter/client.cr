@@ -1,30 +1,30 @@
 module Hunter
   class Client
-    Host = URI.parse("https://api.hunter.io")
-    getter apiKey
+    HOST = URI.parse("https://api.hunter.io")
+    getter api_key
 
-    def initialize(@apiKey : String)
-      @httpClient = HTTP::Client.new(Host)
+    def initialize(@api_key : String)
+      @http_client = HTTP::Client.new(HOST)
     end
 
     def domain
-      Api::Domain.new(@httpClient, @apiKey)
+      Api::Domain.new(@http_client, @api_key)
     end
 
     def account
-      Api::Account.new(@httpClient, @apiKey).me
+      Api::Account.new(@http_client, @api_key).me
     end
 
     def email
-      Api::Email.new(@httpClient, @apiKey)
+      Api::Email.new(@http_client, @api_key)
     end
 
     def leads
-      Api::Leads.new(@httpClient, @apiKey)
+      Api::Leads.new(@http_client, @api_key)
     end
 
     def leadslists
-      Api::LeadsLists.new(@httpClient, @apiKey)
+      Api::LeadsLists.new(@http_client, @api_key)
     end
 
     def status

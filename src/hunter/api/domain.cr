@@ -9,11 +9,11 @@ module Hunter
       params["type"] = type if type
       params["seniority"] = seniority if seniority 
       params["department"] = department if department
-      params["api_key"] = @apiKey
+      params["api_key"] = @api_key
       params = HTTP::Params.encode(params)
 
-      response = @httpClient.get("/#{APIVersion}/domain-search?" + params, headers: Headers)
-      handleResponse(response)
+      response = @http_client.get("/#{APIVERSION}/domain-search?" + params, headers: HEADERS)
+      handle_response(response)
     end
   end
 end

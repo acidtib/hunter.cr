@@ -22,25 +22,25 @@ module Hunter
       params["last_activity_at"] = last_activity_at if last_activity_at
       params["query"] = query if query
       params["offset"] = offset if offset
-      params["api_key"] = @apiKey
+      params["api_key"] = @api_key
       params = HTTP::Params.encode(params)
 
-      response = @httpClient.get("/#{APIVersion}/leads?" + params, headers: Headers)
-      handleResponse(response)
+      response = @http_client.get("/#{APIVERSION}/leads?" + params, headers: HEADERS)
+      handle_response(response)
     end
 
     def get(id = nil)
       params = Hash(String, String).new
-      params["api_key"] = @apiKey
+      params["api_key"] = @api_key
       params = HTTP::Params.encode(params)
 
-      response = @httpClient.get("/#{APIVersion}/leads/#{id}?" + params, headers: Headers)
-      handleResponse(response)
+      response = @http_client.get("/#{APIVERSION}/leads/#{id}?" + params, headers: HEADERS)
+      handle_response(response)
     end
 
     def create(email = nil, first_name = nil, last_name = nil, position = nil, company = nil, company_industry = nil, company_size = nil, confidence_score = nil, website = nil, country_code = nil, linkedin_url = nil, phone_number = nil, twitter = nil, notes = nil, source = nil, lead_list_id = nil)
       params = Hash(String, String).new
-      params["api_key"] = @apiKey
+      params["api_key"] = @api_key
       params = HTTP::Params.encode(params)
 
       body = Hash(String, String).new
@@ -61,13 +61,13 @@ module Hunter
       body["source"] = source if source
       body["lead_list_id"] = lead_list_id if lead_list_id
 
-      response = @httpClient.post("/#{APIVersion}/leads?" + params, headers: Headers, body: body.to_json)
-      handleResponse(response)
+      response = @http_client.post("/#{APIVERSION}/leads?" + params, headers: HEADERS, body: body.to_json)
+      handle_response(response)
     end
 
     def update(id = nil, email = nil, first_name = nil, last_name = nil, position = nil, company = nil, company_industry = nil, company_size = nil, confidence_score = nil, website = nil, country_code = nil, linkedin_url = nil, phone_number = nil, twitter = nil, notes = nil, source = nil, lead_list_id = nil)
       params = Hash(String, String).new
-      params["api_key"] = @apiKey
+      params["api_key"] = @api_key
       params = HTTP::Params.encode(params)
 
       body = Hash(String, String).new
@@ -88,17 +88,17 @@ module Hunter
       body["source"] = source if source
       body["lead_list_id"] = lead_list_id if lead_list_id
 
-      response = @httpClient.put("/#{APIVersion}/leads/#{id}?" + params, headers: Headers, body: body.to_json)
-      handleResponse(response)
+      response = @http_client.put("/#{APIVERSION}/leads/#{id}?" + params, headers: HEADERS, body: body.to_json)
+      handle_response(response)
     end
 
     def delete(id = nil)
       params = Hash(String, String).new
-      params["api_key"] = @apiKey
+      params["api_key"] = @api_key
       params = HTTP::Params.encode(params)
 
-      response = @httpClient.delete("/#{APIVersion}/leads/#{id}?" + params, headers: Headers)
-      handleResponse(response)
+      response = @http_client.delete("/#{APIVERSION}/leads/#{id}?" + params, headers: HEADERS)
+      handle_response(response)
     end
   end
 end

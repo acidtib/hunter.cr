@@ -1,9 +1,9 @@
 module Hunter
   class Api
-    APIVersion = "v2"
-    Headers = HTTP::Headers{"Content-Type" => "application/json", "Accept" => "application/json", "User-Agent" => "hunter.cr"}
+    APIVERSION = "v2"
+    HEADERS = HTTP::Headers{"Content-Type" => "application/json", "Accept" => "application/json", "User-Agent" => "hunter.cr"}
 
-    def initialize(@httpClient : HTTP::Client, @apiKey : String)
+    def initialize(@http_client : HTTP::Client, @api_key : String)
     end
 
     # 200 - OK / The request was successful
@@ -31,7 +31,7 @@ module Hunter
     # 451 - Unavailable for legal reasons / The person behind the requested resource has asked us directly or indirectly to stop the processing of this resource. For this reason, you shouldn't process this resource yourself in any way
     #
     # 5XX - Server errors / Something went wrong on Hunter's end
-    def handleResponse(response : HTTP::Client::Response) : JSON::Any
+    def handle_response(response : HTTP::Client::Response) : JSON::Any
       case response.status_code
       when 200, 201, 202, 222
         JSON.parse(response.body)
@@ -62,7 +62,7 @@ module Hunter
       end
     end
 
-    def self.handleStatus(response : HTTP::Client::Response) : JSON::Any
+    def self.handle_status(response : HTTP::Client::Response) : JSON::Any
       case response.status_code
       when 200
         body = JSON.parse(response.body)["data"]
@@ -76,7 +76,7 @@ module Hunter
                   json.object do
                     json.field("alias", s["alias"])
                     json.field("uptime", s["uptime"])
-                    json.field("isDown", s["isDown"])
+                    json.field("is_down", s["isDown"])
                   end
                 end
               end
