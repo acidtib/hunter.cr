@@ -63,6 +63,28 @@ client.account
 client.status
 ```
 
+## Todo
+
+- [x] - Domain Search
+- [x] - Email Finder
+- [x] - Email Verifier
+- [x] - Email Count
+- [x] - Account Information
+- [x] - Service Status
+- [x] - Leads
+  - [x] - List all
+  - [x] - Retrieve
+  - [x] - Create
+  - [x] - Update
+  - [x] - Delete
+- [x] - Leads Lists
+  - [x] - List all
+  - [x] - Retrieve
+  - [x] - Create
+  - [x] - Update
+  - [x] - Delete
+
+
 ## Development
 
 For development you will need API Credentials from [Hunter.io](https://hunter.io/api_keys)
