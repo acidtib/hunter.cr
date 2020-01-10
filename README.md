@@ -1,5 +1,6 @@
 # hunter.cr
 
+[![Build Status](https://travis-ci.org/arubinofaux/hunter.cr.svg?branch=master)](https://travis-ci.org/arubinofaux/hunter.cr)
 [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://arubinofaux.github.io/hunter.cr/index.html)
 [![License](https://img.shields.io/github/license/arubinofaux/hunter.cr)](https://github.com/arubinofaux/hunter.cr/blob/master/LICENSE)
 
