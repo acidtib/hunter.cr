@@ -1,6 +1,6 @@
 module Hunter
   class Api::Account < Api
-    def me()
+    def me
       params = Hash(String, String).new
       params["api_key"] = @api_key
       params = HTTP::Params.encode(params)

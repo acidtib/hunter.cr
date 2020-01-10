@@ -7,7 +7,7 @@ module Hunter
       params["limit"] = limit if limit
       params["offset"] = offset if offset
       params["type"] = type if type
-      params["seniority"] = seniority if seniority 
+      params["seniority"] = seniority if seniority
       params["department"] = department if department
       params["api_key"] = @api_key
       params = HTTP::Params.encode(params)

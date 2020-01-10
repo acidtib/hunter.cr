@@ -3,7 +3,6 @@ require "webmock"
 require "./support/stub"
 require "../src/hunter"
 
-
 APIKEY = "api_key"
 
 WebMock.allow_net_connect = false

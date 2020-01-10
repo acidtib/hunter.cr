@@ -1,7 +1,7 @@
 module Hunter
   class Api
     APIVERSION = "v2"
-    HEADERS = HTTP::Headers{"Content-Type" => "application/json", "Accept" => "application/json", "User-Agent" => "hunter.cr"}
+    HEADERS    = HTTP::Headers{"Content-Type" => "application/json", "Accept" => "application/json", "User-Agent" => "hunter.cr"}
 
     def initialize(@http_client : HTTP::Client, @api_key : String)
     end
@@ -38,7 +38,6 @@ module Hunter
       when 204
         JSON.parse(JSON.build do |json|
           json.object do
-
           end
         end)
       when 400, 401, 403, 404, 422, 429, 451
@@ -66,7 +65,7 @@ module Hunter
       case response.status_code
       when 200
         body = JSON.parse(response.body)["data"]
-        
+
         JSON.parse(JSON.build do |json|
           json.object do
             json.field("hostname", body["hostname"])
