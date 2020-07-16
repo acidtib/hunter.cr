@@ -15,6 +15,6 @@ WebMock.stub(:get, "https://api.hunter.io/v2/email-count?domain=intercom.io").to
 
 WebMock.stub(:get, "https://api.hunter.io/v2/account?api_key=#{APIKEY}").to_return(body: Stub::ACCOUNT)
 
-WebMock.stub(:get, "https://status.hunter.io/api/v1/public/services/status.hunter.io").to_return(body: Stub::STATUS)
+WebMock.stub(:get, "https://app.hyperping.io/api/v1/public/services/status.hunter.io").to_return(body: Stub::STATUS)
 
 CLIENT = Hunter.new(APIKEY)

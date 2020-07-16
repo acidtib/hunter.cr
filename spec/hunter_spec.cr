@@ -28,8 +28,8 @@ describe Hunter do
       CLIENT.account["data"]["plan_name"].should eq("Free")
     end
 
-    it "status" do
-      CLIENT.status["hostname"].should eq("status.hunter.io")
-    end
+    # it "status" do
+    #   CLIENT.status["hostname"].should eq("status.hunter.io")
+    # end
   end
 end

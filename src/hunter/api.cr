@@ -61,7 +61,7 @@ module Hunter
       end
     end
 
-    def self.handle_status(response : HTTP::Client::Response) : JSON::Any
+    def self.handle_status(response : HTTP::Client::Response) : JSON::Any | Nil
       case response.status_code
       when 200
         body = JSON.parse(response.body)["data"]
